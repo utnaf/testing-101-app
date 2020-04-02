@@ -19,7 +19,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx', '.tsx'],
+    extensions: ['*', '.js', '.jsx', '.ts', '.tsx'],
     modules: ['node_modules', path.resolve(__dirname + '/src')],
     alias: {
       src: path.resolve(__dirname + '/src')
@@ -34,7 +34,8 @@ module.exports = {
     contentBase: path.join(__dirname, 'public/'),
     port: 3000,
     publicPath: 'http://localhost:3000/',
-    hotOnly: true
+    hotOnly: true,
+    historyApiFallback: true
   },
   plugins: [new webpack.HotModuleReplacementPlugin()]
 };

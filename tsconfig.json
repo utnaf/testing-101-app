@@ -17,12 +17,12 @@
     "checkJs": false,
     "baseUrl": "./",
     "paths": {
-      "app/*": ["src/main/webapp/app/*"]
+      "src/*": ["src/*"]
     },
     "importHelpers": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src/main/webapp/app", "src/test/javascript/spec"],
+  "include": ["src/"],
   "exclude": ["node_modules"]
 }
