@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.tsx',
   mode: 'development',
   module: {
     rules: [
@@ -10,7 +10,26 @@ module.exports = {
         test: /\.(j|t)sx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        options: { presets: ['@babel/env'] }
+        options: {
+          presets: ['@babel/preset-env', '@babel/preset-react'],
+          plugins: [
+            '@babel/plugin-syntax-dynamic-import',
+            '@babel/plugin-proposal-class-properties',
+            '@babel/plugin-proposal-export-namespace-from'
+          ]
+        }
+      },
+      {
+        test: /\.tsx?$/,
+        use: {
+          loader: 'ts-loader',
+          options: {
+            transpileOnly: true,
+            happyPackMode: true
+          }
+        },
+        include: [path.resolve(__dirname + '/src')],
+        exclude: [path.resolve(__dirname + '/node_modules')]
       },
       {
         test: /\.css$/,

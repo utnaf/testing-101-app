@@ -1,13 +1,12 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import LoginPage from 'src/component/Login/login-page';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import ParkingLotRoutes from 'src/component/ParkingLot';
 
 const Routes = () => (
-  <div className="view-routes">
-    <Switch>
-      <Route path="/login" exact component={LoginPage} />
-    </Switch>
-  </div>
+  <Switch>
+    <Redirect path="/" exact to="/lot" />
+    <Route path="/lot" component={ParkingLotRoutes} />
+  </Switch>
 );
 
 export default Routes;

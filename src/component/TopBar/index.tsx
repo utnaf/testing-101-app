@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Typography } from '@material-ui/core';
 
 export const TopBar = props => {
   return (
-    <AppBar>
+    <AppBar position="relative">
       <Toolbar>
         <Typography variant="h6">Parking Lot Manager</Typography>
       </Toolbar>
