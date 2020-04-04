@@ -41,7 +41,7 @@ export const ParkingLot = (props: IParkingLotProps) => {
                     </Grid>
                     <Grid item>
                       <Typography gutterBottom variant="h5" component="small">
-                        0 / {parkingLot.spots}
+                        {parkingLot.status.carCount} / {parkingLot.spots}
                       </Typography>
                     </Grid>
                   </Grid>

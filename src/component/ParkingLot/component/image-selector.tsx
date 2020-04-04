@@ -5,7 +5,7 @@ import { Box } from '@material-ui/core';
 import getClasses from './style';
 import Loader from 'src/shared/components/Loader';
 
-const baseSearch = 'https://source.unsplash.com/featured/?parking%20lot';
+const baseSearch = 'https://source.unsplash.com/featured/?parking';
 
 export interface IImageSelectorProps {
   setImageUrl: Function;
