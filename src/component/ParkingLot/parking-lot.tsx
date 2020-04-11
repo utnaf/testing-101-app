@@ -6,11 +6,11 @@ import { getParkingLots } from './parking-lot.reducer';
 import Alert from '@material-ui/lab/Alert';
 import AddIcon from '@material-ui/icons/Add';
 import Loader from 'src/shared/components/Loader';
-import { Link } from 'react-router-dom';
+import { Link, RouteComponentProps } from 'react-router-dom';
 
 import getClasses from './style';
 
-export interface IParkingLotProps extends StateProps, DispatchProps {}
+export interface IParkingLotProps extends StateProps, DispatchProps, RouteComponentProps {}
 
 export const ParkingLot = (props: IParkingLotProps) => {
   const { parkingLots, loading } = props;
@@ -19,9 +19,12 @@ export const ParkingLot = (props: IParkingLotProps) => {
 
   useEffect(() => {
     props.getParkingLots();
-
-    setTimeout(() => console.log(parkingLots), 2000);
   }, []);
+
+  const openLotDashboard = id => e => {
+    e.preventDefault();
+    props.history.push(`/lot/${id}`);
+  };
 
   return (
     <Box>
@@ -29,7 +32,7 @@ export const ParkingLot = (props: IParkingLotProps) => {
       {parkingLots.length > 0 ? (
         <Grid container spacing={4}>
           {parkingLots.map(parkingLot => (
-            <Grid item xs={12} sm={6} md={4} key={parkingLot.id}>
+            <Grid item xs={12} sm={6} md={4} key={parkingLot.id} onClick={openLotDashboard(parkingLot.id)}>
               <Card className={classes.card}>
                 <CardMedia className={classes.media} image={parkingLot.imageUrl} title={`${parkingLot.name} Picture`} />
                 <CardContent>

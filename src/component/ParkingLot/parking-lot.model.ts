@@ -11,6 +11,13 @@ export interface IParkingLot {
   status?: IParkingLotStatus;
 }
 
+export interface IParkingLotEntry {
+  id?: number;
+  enterTime?: Date;
+  exitTime?: Date;
+  carPlate: string;
+}
+
 export const defaultValue: Readonly<IParkingLot> = {
   spots: 350,
 };

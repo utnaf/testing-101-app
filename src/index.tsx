@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import store from './config/store';
 import setupAxiosInterceptors from './config/axios';
+import './config/moment';
 
 import App from 'src/App';
 
