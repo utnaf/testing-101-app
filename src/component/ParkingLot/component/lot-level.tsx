@@ -27,7 +27,7 @@ export const LotLevel = (props: ILotLevel) => {
   };
 
   return (
-    <Box display="flex" justifyContent="center" flexDirection="column" className={handleClasses()}>
+    <Box id="lot-level-box" display="flex" justifyContent="center" flexDirection="column" className={handleClasses()}>
       <CircularProgress className={classes.circularProgress} variant="static" value={progress} />
       <Box mt={1}>
         <Typography align="center">

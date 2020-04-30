@@ -8,7 +8,7 @@ import Loader from 'src/shared/components/Loader';
 const baseSearch = 'https://source.unsplash.com/featured/?parking';
 
 export interface IImageSelectorProps {
-  setImageUrl: Function;
+  setImageUrl: (imageUrl: string) => void;
 }
 
 export const ImageSelector = (props: IImageSelectorProps) => {
@@ -21,14 +21,12 @@ export const ImageSelector = (props: IImageSelectorProps) => {
     axios
       .get(baseSearch)
       .then(res => {
-        setBgImage(res.request.responseURL);
+        const imageUrl = res.request.responseURL;
+        props.setImageUrl(imageUrl);
+        setBgImage(imageUrl);
       })
       .then(() => setLoading(false));
   };
-
-  useEffect(() => {
-    props.setImageUrl(bgImage);
-  }, [bgImage]);
 
   useEffect(() => {
     if (bgImage === null) {
@@ -37,7 +35,7 @@ export const ImageSelector = (props: IImageSelectorProps) => {
   });
 
   return (
-    <Box className={classes.root} onClick={refreshImage} style={{ backgroundImage: `url(${bgImage})` }}>
+    <Box id="image-selector-box" className={classes.root} onClick={refreshImage} style={{ backgroundImage: `url(${bgImage})` }}>
       <Loader visible={loading} />
     </Box>
   );

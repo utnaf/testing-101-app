@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ParkingLot /> Renders the component that matches the snapshot 1`] = `
+<Styled(MuiBox)>
+  <Component
+    visible={false}
+  />
+  <WithStyles(ForwardRef(Grid))
+    container={true}
+    spacing={4}
+  >
+    <WithStyles(ForwardRef(Grid))
+      item={true}
+      key="1"
+      md={4}
+      onClick={[Function]}
+      sm={6}
+      xs={12}
+    >
+      <WithStyles(ForwardRef(Card))
+        className="makeStyles-card-2"
+      >
+        <WithStyles(ForwardRef(CardMedia))
+          className="makeStyles-media-3"
+          title="Foo Picture"
+        />
+        <WithStyles(ForwardRef(CardContent))>
+          <WithStyles(ForwardRef(Grid))
+            container={true}
+            justify="space-between"
+          >
+            <WithStyles(ForwardRef(Grid))
+              item={true}
+              xs={8}
+            >
+              <WithStyles(ForwardRef(Typography))
+                component="h2"
+                gutterBottom={true}
+                variant="h5"
+              >
+                Foo
+              </WithStyles(ForwardRef(Typography))>
+            </WithStyles(ForwardRef(Grid))>
+            <WithStyles(ForwardRef(Grid))
+              item={true}
+            >
+              <WithStyles(ForwardRef(Typography))
+                component="small"
+                gutterBottom={true}
+                variant="h5"
+              >
+                10
+                 / 
+                100
+              </WithStyles(ForwardRef(Typography))>
+            </WithStyles(ForwardRef(Grid))>
+          </WithStyles(ForwardRef(Grid))>
+          <WithStyles(ForwardRef(Typography))>
+            Bar
+          </WithStyles(ForwardRef(Typography))>
+        </WithStyles(ForwardRef(CardContent))>
+      </WithStyles(ForwardRef(Card))>
+    </WithStyles(ForwardRef(Grid))>
+  </WithStyles(ForwardRef(Grid))>
+  <WithStyles(ForwardRef(Fab))
+    aria-label="add parking lot"
+    className="makeStyles-fab-1"
+    color="secondary"
+    component={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "displayName": "Link",
+        "propTypes": Object {
+          "innerRef": [Function],
+          "onClick": [Function],
+          "replace": [Function],
+          "target": [Function],
+          "to": [Function],
+        },
+        "render": [Function],
+      }
+    }
+    to="/lot/create"
+  >
+    <AddIcon />
+  </WithStyles(ForwardRef(Fab))>
+</Styled(MuiBox)>
+`;
